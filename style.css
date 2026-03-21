@@ -1,10 +1,10 @@
 /* GLOBAL */
 
 body{
-font-family:Arial, sans-serif;
+font-family: 'Segoe UI', Arial, sans-serif;
 margin:0;
-background:#0f172a;
-color:white;
+background:#0b1120;
+color:#e2e8f0;
 padding:40px;
 text-align:center;
 }
@@ -13,7 +13,9 @@ text-align:center;
 
 .title{
 margin-bottom:40px;
-font-size:36px;
+font-size:38px;
+font-weight:700;
+color:#38bdf8;
 }
 
 /* NAVBAR */
@@ -24,10 +26,13 @@ justify-content:space-between;
 align-items:center;
 padding:20px 60px;
 background:#020617;
+border-bottom:1px solid #1e293b;
 }
 
 .logo{
 color:#38bdf8;
+font-weight:bold;
+font-size:22px;
 }
 
 .nav-links{
@@ -38,7 +43,12 @@ list-style:none;
 
 .nav-links a{
 text-decoration:none;
-color:white;
+color:#cbd5f5;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#38bdf8;
 }
 
 /* HERO */
@@ -49,8 +59,9 @@ padding:120px 20px;
 }
 
 .hero h1{
-font-size:48px;
+font-size:50px;
 margin-bottom:10px;
+color:white;
 }
 
 .hero p{
@@ -66,30 +77,38 @@ justify-content:center;
 gap:20px;
 }
 
-/* BUTTONS (MERGED) */
+/* BUTTONS */
 
 .btn{
 display:inline-block;
 margin-top:20px;
 padding:12px 25px;
-background:linear-gradient(45deg,#4f46e5,#6366f1);
+background:linear-gradient(45deg,#3b82f6,#6366f1);
 color:white;
 text-decoration:none;
-border-radius:6px;
+border-radius:8px;
 transition:0.3s;
 font-weight:bold;
+box-shadow:0 5px 15px rgba(59,130,246,0.3);
 }
 
 .btn:hover{
-transform:scale(1.1);
+transform:scale(1.08);
+box-shadow:0 8px 25px rgba(59,130,246,0.6);
 }
 
 .btn-secondary{
 border:1px solid #38bdf8;
 padding:12px 25px;
-border-radius:6px;
+border-radius:8px;
 text-decoration:none;
 color:#38bdf8;
+transition:0.3s;
+}
+
+.btn-secondary:hover{
+background:#38bdf8;
+color:#020617;
 }
 
 /* PRICING */
@@ -102,30 +121,53 @@ flex-wrap:wrap;
 }
 
 .plan{
-background:white;
-color:black;
+background:#020617;
+color:#e2e8f0;
 padding:30px;
-border-radius:12px;
+border-radius:14px;
 width:260px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+border:1px solid #1e293b;
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
 transition:all 0.3s ease;
 position:relative;
 }
 
 .plan:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 20px 50px rgba(0,0,0,0.2);
+transform:translateY(-10px) scale(1.04);
+border-color:#38bdf8;
+box-shadow:0 15px 50px rgba(56,189,248,0.25);
 }
 
+.plan h2{
+color:#38bdf8;
+}
+
+.plan ul{
+padding-left:0;
+list-style:none;
+color:#94a3b8;
+}
+
+.plan li{
+margin:8px 0;
+}
+
+.plan h3{
+margin-top:15px;
+color:white;
+}
+
+/* POPULAR PLAN */
+
 .popular{
-border:3px solid #4f46e5;
+border:2px solid #6366f1;
 }
 
 .badge{
 position:absolute;
-top:-10px;
+top:-12px;
 right:20px;
-background:#4f46e5;
+background:linear-gradient(45deg,#6366f1,#3b82f6);
 color:white;
 padding:5px 12px;
 font-size:12px;
@@ -151,8 +193,14 @@ margin-top:40px;
 .card{
 background:#020617;
 padding:25px;
-border-radius:10px;
+border-radius:12px;
 border:1px solid #1e293b;
+transition:0.3s;
+}
+
+.card:hover{
+border-color:#38bdf8;
+transform:translateY(-6px);
 }
 
 /* CONTRACT */
@@ -164,21 +212,29 @@ margin-top:40px;
 }
 
 .contract-box{
-background:white;
-color:black;
+background:#020617;
+color:#e2e8f0;
 padding:40px;
-border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+border-radius:12px;
+border:1px solid #1e293b;
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
 max-width:600px;
 width:100%;
+text-align:left;
 }
 
 .contract-box h2{
 margin-top:20px;
+color:#38bdf8;
+}
+
+.contract-box strong{
+color:white;
 }
 
 .terms{
 padding-left:20px;
+color:#94a3b8;
 }
 
 .agree{
@@ -188,12 +244,12 @@ font-weight:bold;
 #status{
 margin-top:20px;
 font-weight:bold;
-color:green;
+color:#22c55e;
 }
 
 #timer{
 margin-top:10px;
-color:#555;
+color:#94a3b8;
 }
 
 /* CTA */
@@ -210,4 +266,5 @@ footer{
 text-align:center;
 padding:30px;
 color:#94a3b8;
+border-top:1px solid #1e293b;
 }
