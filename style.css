@@ -63,24 +63,35 @@ color:#38bdf8;
 /* HERO */
 
 .hero{
+position:relative;
+padding:140px 20px;
 text-align:center;
-padding:120px 20px;
+color:white;
+background:
+linear-gradient(rgba(2,6,23,0.8),rgba(2,6,23,0.95)),
+url("https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+background-position:center;
 }
 
+/* HERO TEXT */
+
 .hero h1{
-font-size:clamp(28px,5vw,50px);
-margin-bottom:10px;
-color:white;
+font-size:52px;
+margin-bottom:15px;
 }
 
 .hero p{
 max-width:600px;
 margin:auto;
 color:#94a3b8;
+font-size:18px;
 }
 
+/* HERO BUTTONS */
+
 .hero-buttons{
-margin-top:30px;
+margin-top:35px;
 display:flex;
 justify-content:center;
 gap:20px;
