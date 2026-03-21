@@ -1,11 +1,15 @@
 /* GLOBAL */
 
+*{
+box-sizing:border-box;
+}
+
 body{
-font-family: 'Segoe UI', Arial, sans-serif;
+font-family:'Segoe UI', Arial, sans-serif;
 margin:0;
 background:#0b1120;
 color:#e2e8f0;
-padding:40px;
+padding:40px 20px;
 text-align:center;
 }
 
@@ -13,7 +17,7 @@ text-align:center;
 
 .title{
 margin-bottom:40px;
-font-size:38px;
+font-size:clamp(28px,4vw,38px);
 font-weight:700;
 color:#38bdf8;
 }
@@ -27,6 +31,8 @@ align-items:center;
 padding:20px 60px;
 background:#020617;
 border-bottom:1px solid #1e293b;
+flex-wrap:wrap;
+gap:15px;
 }
 
 .logo{
@@ -39,6 +45,9 @@ font-size:22px;
 display:flex;
 gap:25px;
 list-style:none;
+flex-wrap:wrap;
+justify-content:center;
+padding:0;
 }
 
 .nav-links a{
@@ -59,7 +68,7 @@ padding:120px 20px;
 }
 
 .hero h1{
-font-size:50px;
+font-size:clamp(28px,5vw,50px);
 margin-bottom:10px;
 color:white;
 }
@@ -75,6 +84,7 @@ margin-top:30px;
 display:flex;
 justify-content:center;
 gap:20px;
+flex-wrap:wrap;
 }
 
 /* BUTTONS */
@@ -125,7 +135,8 @@ background:#020617;
 color:#e2e8f0;
 padding:30px;
 border-radius:14px;
-width:260px;
+width:100%;
+max-width:260px;
 border:1px solid #1e293b;
 box-shadow:0 10px 40px rgba(0,0,0,0.4);
 transition:all 0.3s ease;
@@ -209,6 +220,7 @@ transform:translateY(-6px);
 display:flex;
 justify-content:center;
 margin-top:40px;
+padding:20px;
 }
 
 .contract-box{
@@ -267,4 +279,73 @@ text-align:center;
 padding:30px;
 color:#94a3b8;
 border-top:1px solid #1e293b;
+}
+
+/* TABLET */
+
+@media (max-width:900px){
+
+.navbar{
+padding:20px 30px;
+}
+
+.hero{
+padding:80px 20px;
+}
+
+.hero-buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.pricing{
+gap:20px;
+}
+
+}
+
+/* MOBILE */
+
+@media (max-width:600px){
+
+.title{
+font-size:26px;
+}
+
+.navbar{
+flex-direction:column;
+align-items:center;
+padding:20px;
+}
+
+.nav-links{
+flex-direction:column;
+gap:10px;
+}
+
+.hero{
+padding:60px 15px;
+}
+
+.hero p{
+font-size:14px;
+}
+
+.btn{
+width:100%;
+max-width:250px;
+}
+
+.plan{
+max-width:100%;
+}
+
+.contract-box{
+padding:25px;
+}
+
+.feature-grid{
+grid-template-columns:1fr;
+}
+
 }
