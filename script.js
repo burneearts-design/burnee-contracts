@@ -1,39 +1,27 @@
 function acceptContract(){
 
-localStorage.setItem("contractAccepted","true");
+const checkbox = document.getElementById("agreeTerms");
+const status = document.getElementById("status");
 
-document.getElementById("status").innerHTML =
-"<h3>Contract Accepted</h3><p>Please pay the deposit to begin the project.</p>";
-
-startTimer();
-
+if(!checkbox.checked){
+status.innerHTML = "Please agree to the contract terms first.";
+return;
 }
 
-function startTimer(){
+status.innerHTML = "Contract Accepted. Waiting for deposit payment.";
 
-let startDate = new Date();
+let days = 5;
 
-localStorage.setItem("contractStart",startDate);
+const timer = document.getElementById("timer");
 
-updateTimer();
+setInterval(function(){
 
-setInterval(updateTimer,1000);
+timer.innerHTML = "Project deadline: " + days + " day(s) remaining";
 
+if(days > 0){
+days--;
 }
 
-function updateTimer(){
-
-let start = new Date(localStorage.getItem("contractStart"));
-
-let now = new Date();
-
-let diff = now - start;
-
-let days = Math.floor(diff / (1000*60*60*24));
-
-let hours = Math.floor(diff / (1000*60*60));
-
-document.getElementById("timer").innerHTML =
-"<p>Contract Running: " + days + " days (" + hours + " hours)</p>";
+}, 86400000);
 
 }
