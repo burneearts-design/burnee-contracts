@@ -94,7 +94,43 @@ padding:25px;
 border-radius:10px;
 border:1px solid #1e293b;
 }
+.contract-container{
+display:flex;
+justify-content:center;
+margin-top:40px;
+}
 
+.contract-box{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+max-width:600px;
+width:100%;
+}
+
+.contract-box h2{
+margin-top:20px;
+}
+
+.terms{
+padding-left:20px;
+}
+
+.agree{
+font-weight:bold;
+}
+
+#status{
+margin-top:20px;
+font-weight:bold;
+color:green;
+}
+
+#timer{
+margin-top:10px;
+color:#555;
+}
 /* CTA */
 
 .cta{
