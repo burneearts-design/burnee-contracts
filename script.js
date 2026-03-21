@@ -2,34 +2,34 @@ const params = new URLSearchParams(window.location.search);
 let plan = params.get("plan");
 
 // default plan if none selected
-if(!plan){
+if (!plan) {
 plan = "standard";
 }
 
 const plans = {
 
 basic: {
-name: "Basic",
-price: "3,000 – 6,000 KES",
-deposit: "3,000 KES",
-balance: "Remaining after project completion",
-timeline: "2–3 Days"
+name: "Basic Plan",
+price: "$39 USD",
+deposit: "$20 USD",
+balance: "$19 USD",
+timeline: "3 Days"
 },
 
 standard: {
-name: "Standard",
-price: "6,000 – 12,000 KES",
-deposit: "4,000 KES",
-balance: "Remaining after project completion",
-timeline: "4–5 Days"
+name: "Standard Plan",
+price: "$78 USD",
+deposit: "$39 USD",
+balance: "$39 USD",
+timeline: "5 Days"
 },
 
 premium: {
-name: "Premium",
-price: "12,000 – 20,000 KES",
-deposit: "6,000 KES",
-balance: "Remaining after project completion",
-timeline: "5–7 Days"
+name: "Premium Plan",
+price: "$117 USD",
+deposit: "$59 USD",
+balance: "$58 USD",
+timeline: "7 Days"
 }
 
 };
@@ -44,7 +44,7 @@ document.getElementById("balance").textContent = selected.balance;
 document.getElementById("timeline").textContent = selected.timeline;
 
 
-// Accept contract function
+// Accept contract
 function acceptContract(){
 
 const checkbox = document.getElementById("agreeTerms");
@@ -56,6 +56,14 @@ return;
 }
 
 document.getElementById("status").innerText =
-"Contract accepted. Please send the deposit via M-Pesa.";
+"Contract accepted. Opening WhatsApp...";
+
+const phone = "254708435303";
+
+const message = encodeURIComponent(
+`Hello Burnee, I have accepted the ${selected.name} and I am ready to proceed with the deposit.`
+);
+
+window.location.href = `https://wa.me/${phone}?text=${message}`;
 
 }
