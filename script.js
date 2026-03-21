@@ -1,49 +1,56 @@
 const params = new URLSearchParams(window.location.search);
-const plan = params.get("plan");
+let plan = params.get("plan");
 
-let price;
-let deposit;
-let balance;
-let timeline;
-let planName;
-
-if(plan === "basic"){
-planName = "Basic Plan";
-price = "3,000 – 6,000 KES";
-deposit = "2,000 KES";
-balance = "Remaining after completion";
-timeline = "2 Days";
+// Default plan if none selected
+if (!plan) {
+plan = "standard";
 }
 
-if(plan === "standard"){
-planName = "Standard Plan";
-price = "6,000 – 12,000 KES";
-deposit = "4,000 KES";
-balance = "Remaining after completion";
-timeline = "5 Days";
+const plans = {
+
+basic: {
+name: "Basic Plan",
+price: 6000,
+timeline: "2 Days"
+},
+
+standard: {
+name: "Standard Plan",
+price: 8000,
+timeline: "5 Days"
+},
+
+premium: {
+name: "Premium Plan",
+price: 15000,
+timeline: "7 Days"
 }
 
-if(plan === "premium"){
-planName = "Premium Plan";
-price = "12,000 – 20,000 KES";
-deposit = "8,000 KES";
-balance = "Remaining after completion";
-timeline = "7 Days";
-}
+};
 
-document.getElementById("planName").innerText = planName;
-document.getElementById("price").innerText = price;
-document.getElementById("deposit").innerText = deposit;
-document.getElementById("balance").innerText = balance;
-document.getElementById("timeline").innerText = timeline;
+const selectedPlan = plans[plan];
 
+// Calculate deposit (50%)
+const deposit = selectedPlan.price / 2;
+const balance = selectedPlan.price - deposit;
+
+// Fill contract
+document.getElementById("planName").textContent = selectedPlan.name;
+document.getElementById("price").textContent = selectedPlan.price + " KES";
+document.getElementById("deposit").textContent = deposit + " KES";
+document.getElementById("balance").textContent = balance + " KES";
+document.getElementById("timeline").textContent = selectedPlan.timeline;
+
+
+// Accept contract function
 
 function acceptContract(){
 
 const checkbox = document.getElementById("agreeTerms");
 
 if(!checkbox.checked){
-document.getElementById("status").innerText = "Please agree to the terms first.";
+document.getElementById("status").innerText =
+"Please agree to the contract terms first.";
 return;
 }
 
