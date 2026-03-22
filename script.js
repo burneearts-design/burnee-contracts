@@ -73,3 +73,22 @@ const termsBox = document.getElementById("termsList");
 if (termsBox) {
   termsBox.innerHTML = content.terms.map(t => `<li>${t}</li>`).join("");
 }
+window.acceptContract = function () {
+    const checkbox = document.getElementById("agreeTerms");
+    const status = document.getElementById("status");
+
+    if (!checkbox?.checked) {
+        if (status) status.textContent = "Please agree to the contract terms first.";
+        return;
+    }
+
+    if (status) status.textContent = "Opening WhatsApp...";
+
+    const phone = "254708453353";
+
+    const message = encodeURIComponent(
+      `Hello Burnee, I have selected the ${selected.name} and I am ready to proceed with the deposit.`
+    );
+
+    window.location.href = `https://wa.me/${phone}?text=${message}`;
+};
