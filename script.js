@@ -65,11 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (status) status.textContent = "Opening WhatsApp...";
+    if (status) status.textContent = "You are being redirected to WhatsApp...";
 
-    const phone = "254708453353";
+    const phone = "254708435303";
     const message = encodeURIComponent(
-      `Hello Burnee, I have selected the ${selected.name} and I am ready to proceed with the deposit.`
+      `Hello Burnee, I have selected the ${selected.name} and I am ready to proceed with the deposit of ${selected.deposit}.`
     );
 
     window.location.href = `https://wa.me/${phone}?text=${message}`;
