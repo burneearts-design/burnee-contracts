@@ -60,3 +60,10 @@ const message = encodeURIComponent(
 window.location.href = `https://wa.me/${phone}?text=${message}`;
 
 }
+function toggleMenu(){
+
+const nav = document.getElementById("navLinks");
+
+nav.classList.toggle("active");
+
+}
