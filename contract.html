@@ -9,28 +9,31 @@
 
 <body>
 
-<section class="hero">
+<!-- HERO (DYNAMIC) -->
+<section class="hero" id="heroSection">
 
-<h1>Professional Web Development</h1>
+<h1 id="heroTitle">Web Development Package</h1>
 
-<p>
-Modern websites, fast performance, and scalable solutions for
-businesses and startups.
+<p id="heroDesc">
+Professional websites tailored to your business needs.
 </p>
 
+<div class="hero-features" id="heroFeatures"></div>
+
 <div class="hero-buttons">
-<a href="pricing.html" class="btn">View Pricing</a>
-<a href="contract.html" class="btn-secondary">Start Project</a>
+<a href="pricing.html" class="btn">Compare Plans</a>
 </div>
 
 </section>
+
+<!-- HEADER -->
 <header class="contract-header">
 <h1>Burnee Web Development Contract</h1>
-<p>Professional Project Agreement</p>
+<p id="planSubtitle">Project Agreement</p>
 </header>
 
+<!-- CONTRACT -->
 <div class="contract-container">
-
 <div class="contract-box">
 
 <h2>Project Details</h2>
@@ -57,12 +60,7 @@ businesses and startups.
 
 <h2>Agreement Terms</h2>
 
-<ul class="terms">
-<li>Client must pay the deposit before work begins.</li>
-<li>Remaining balance is paid after project completion.</li>
-<li>Project timeline starts after deposit confirmation.</li>
-<li>Client can request revisions within the agreed scope.</li>
-</ul>
+<ul class="terms" id="termsList"></ul>
 
 <label class="agree">
 <input type="checkbox" id="agreeTerms">
@@ -78,7 +76,6 @@ Accept Contract
 <div id="status"></div>
 
 </div>
-
 </div>
 
 <footer>
@@ -88,5 +85,4 @@ Accept Contract
 <script src="script.js"></script>
 
 </body>
-
 </html>
